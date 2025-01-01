@@ -5,7 +5,7 @@
 
         echo("<br>");
 
-        $filetype = strtolower(pathinfo($_FILES['fileToUpload']['name'],PATHINFO_EXTENSION));
+        $filetype = strtolower(pathinfo($fileName,PATHINFO_EXTENSION));
         echo($filetype);
 
         $uploadOk = 1;
@@ -67,7 +67,10 @@
 
         <li><a href="<?php echo $file; ?>"><?php echo basename($file); ?></a></li>
     
-    <?php } ?>
+    <?php };
+    $conn->close();
+    
+    ?>
 </ul>
     </body>
 </html>
